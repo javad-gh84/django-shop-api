@@ -114,7 +114,9 @@ https://persian-theme.com
 
                 {% if messages %}
                   {% for message in messages %}
-                    <div class="alert alert-success">{{ message }}</div>
+                    <div style="background:#28a745; color:#fff; padding:15px; border-radius:10px; margin-bottom:20px;">
+                      {{ message }}
+                    </div>
                   {% endfor %}
                 {% endif %}
 

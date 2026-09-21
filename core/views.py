@@ -9,20 +9,13 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        surname = request.POST.get('surname')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-
         ContactMessage.objects.create(
-            name=name,
-            surname=surname,
-            email=email,
-            subject=subject,
-            message=message,
+            name=request.POST.get('name'),
+            surname=request.POST.get('surname'),
+            email=request.POST.get('email'),
+            subject=request.POST.get('subject'),
+            message=request.POST.get('message'),
         )
-
         messages.success(request, 'پیام شما با موفقیت ارسال شد! ✅')
         return redirect('core:contact')
 
